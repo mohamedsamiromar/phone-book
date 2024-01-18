@@ -33,20 +33,20 @@ class User(AbstractUser):
         related_name='account_users_permissions'
     )
 
-    def __str__(self):
-        return self.email
+    # def __str__(self):
+    #     return self.email
 
-    @property
-    def is_anonymous(self):
-        return False
+    # @property
+    # def is_anonymous(self):
+    #     return False
 
-    @property
-    def is_authenticated(self):
-        return False
+    # @property
+    # def is_authenticated(self):
+    #     return False
 
-    @property
-    def full_name(self):
-        return f"{self.first_name.title()} {self.last_name.title()}"
+    # @property
+    # def full_name(self):
+    #     return f"{self.first_name.title()} {self.last_name.title()}"
 
 
 

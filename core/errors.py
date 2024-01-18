@@ -12,7 +12,7 @@ class Error(Enum):
     BLOCKED_USER = {'code': -403, 'detail': _('User is banned!')}
     NO_ACTIVE_ACCOUNT = {'code': -500, 'detail': _('No active account found with the given credentials!')}
     PERSON_CREATION_FAILED = {'code': -500, 'detail': _('No active account found with the given credentials!')}
-
+    REGISTER_FAILED = {'code': -405, 'detail': _('register failed')}
 
 class APIError(Exception):
     def __init__(self, error: Error, extra=None):

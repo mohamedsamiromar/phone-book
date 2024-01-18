@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'phonebook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'phonebook_db',
+        'NAME': 'phone_book_db',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',
