@@ -1,5 +1,6 @@
 from .models import User
 
+
 class RegisterService:
 
     @staticmethod
