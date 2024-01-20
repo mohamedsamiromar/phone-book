@@ -13,6 +13,9 @@ class Error(Enum):
     NO_ACTIVE_ACCOUNT = {'code': -500, 'detail': _('No active account found with the given credentials!')}
     PERSON_CREATION_FAILED = {'code': -500, 'detail': _('No active account found with the given credentials!')}
     REGISTER_FAILED = {'code': -405, 'detail': _('register failed')}
+    EMAIL_ALREADY_EXIST = {'code': -104, 'detail': _('this email already exist!')}
+    USERNAME_ALREADY_EXIST = {'code': -103, 'detail': _('this username already exist!')}
+
 
 class APIError(Exception):
     def __init__(self, error: Error, extra=None):

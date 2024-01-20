@@ -23,5 +23,5 @@ urlpatterns = [
     path('accounts/', include('account.urls')),
     path('contacts/', include('contacts.urls')),
 
-    path('auth-login', LoginAuthView.as_view(), name='auth-login')
+    path('login', LoginAuthView.as_view(), name='auth-login')
 ]

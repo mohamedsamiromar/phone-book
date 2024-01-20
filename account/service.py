@@ -1,4 +1,20 @@
-from .models import User
+from account import queries
+from .models import LoginLog, User
+from contacts.models import Contact
+from core.errors import Error, APIError
+
+
+class AccountService:
+    def Login_obtain_access_token(user: User, token: dict) -> dict:
+        if user.is_blocked:
+            raise APIError(Error.BLOCKED_USER)
+        else:
+            return token
+
+    @staticmethod
+    def login(username: str) -> None:
+        LoginLog.objects.create(username=username)
+
 
 
 class RegisterService:
@@ -13,7 +29,12 @@ class RegisterService:
         password: str,
         username: str
     ) -> User:
-
+            
+            if queries.get_user_by_username(username=username):
+                raise APIError(Error.USERNAME_ALREADY_EXIST)
+            if queries.get_user_by_email(email=email):
+                raise APIError(Error.EMAIL_ALREADY_EXIST)
+            
             user = User(
                 email=email,
                 first_name= first_name,
@@ -25,7 +46,4 @@ class RegisterService:
 
             user.set_password(password)
             user.save()
-
-
-            print(type(user))
             return user

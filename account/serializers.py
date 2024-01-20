@@ -8,10 +8,10 @@ class AuthSerializer(TokenObtainPairSerializer):
 
     @classmethod
     def get_token(cls, user):
+        print(user.id)
         token = super().get_token(user)
-        return AccountService.optain_access_token(
+        return AccountService.Login_obtain_access_token(
             user=user,
-            group=GroupEnum.PERSON,
             token=token
         )
 

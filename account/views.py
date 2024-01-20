@@ -13,7 +13,8 @@ class LoginAuthView(TokenObtainPairView):
         serializer = AuthSerializer(
             data=request.data)
         serializer.is_valid(raise_exception=True)
-        # AccountService.login(request.data.get('email'))
+        print("#############33")
+        AccountService.login(request.data.get('username'))
         return Response(serializer.validated_data)
 
 
