@@ -6,10 +6,7 @@ from core.errors import Error, APIError
 
 class AccountService:
     def Login_obtain_access_token(user: User, token: dict) -> dict:
-        if user.is_blocked:
-            raise APIError(Error.BLOCKED_USER)
-        else:
-            return token
+        return token
 
     @staticmethod
     def login(username: str) -> None:
