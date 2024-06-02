@@ -1,4 +1,5 @@
-*.pyc
-/venv/
-/.idea/
-/person_log.log/
+venv
+venv/*
+.idea
+**.pyc
+*/*.pyc
