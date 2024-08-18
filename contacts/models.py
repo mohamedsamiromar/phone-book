@@ -5,8 +5,6 @@ from account.models import BaseModel, User
 class Contact(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_contact', null=True)
     name = models.CharField(max_length=100)
-    telephone = models.CharField(max_length=10, null=True)
-    email = models.EmailField(max_length=100, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     is_favorite = models.BooleanField(default=False)
 
