@@ -63,7 +63,7 @@ class BaseModel(models.Model):
 
 
 class LoginLog(BaseModel):
-    email = models.EmailField(null=True)
+    username = models.CharField(max_length=150, null=True)
 
     def __str__(self):
         return '{} Logged in at {}'.format(self.email, self.created_at)
